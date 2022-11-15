@@ -1,4 +1,4 @@
-#!/usr/env/python3
+#!/usr/bin/python3
 
 mylist= [1,2,3,4,5, "Python"]
 
