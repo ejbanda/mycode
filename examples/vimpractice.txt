@@ -1,0 +1,29 @@
+
+vim tricks
+undo
+undo me pls
+    command mode
+    u
+re-do
+re-do me pls
+    command mode
+    ctrl r
+
+cut
+cut this please
+    command mode
+    dd
+copy - called yank in vim
+copy this
+and this
+    command mode
+    yy
+for one word
+    command mode
+    y1w
+
+paste
+paste this 
+    command mode
+    p
+or shift ins
