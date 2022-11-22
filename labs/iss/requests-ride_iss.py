@@ -21,14 +21,14 @@ def main():
     ## strip the json off the 200 that was returned by our API
     ## translate the json into python lists and dictionaries
     helmetson = groundctrl.json()
-
+    print(type(helmetson))
     ## display our Pythonic data
-    print("\n\nConverted Python data")
-    print(helmetson)
+   # print("\n\nConverted Python data")
+   # print(helmetson)
 
-    print('\n\nPeople in Space: ', helmetson['number'])
-    people = helmetson['people']
-    print(people)
+   # print('\n\nPeople in Space: ', helmetson['number'])
+   # people = helmetson['people']
+   # print(people)
     
     print(f'People in space: {helmetson["number"]}')
     for person in helmetson['people']:
