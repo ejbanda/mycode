@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Pets</title>
+  </head>
+  <body>
+      {% if petInfo|length > 1 %}
+      <h1> You have enough Pets </h1>
+      <h2> Here are your pets </h2>
+      <div id="image_container">
+        {% for pet in petInfo %}
+        <img
+            src = {{pet['image']}}
+                alt = {{pet['name']}}></>
+        {% endfor %}
+      </div>
+      {% elif petInfo|length < 2 %}
+      <h1> Not enough Pets </h1>
+      <h2> Here are your stats then </h2>
+      <div>
+          {% for key, value in playerStats.items() %}
+          <p>{{ key }} : {{ value }}</p>
+          {% endfor %}
+      </div>
+      {% else %}
+      <h1>Something went terribly wrong.</h1>
+      {% endif %}
+    <script src="./scripts.js"></script>
+  </body>
+</html>
