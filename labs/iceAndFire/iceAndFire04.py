@@ -26,8 +26,11 @@ def main():
 
         ## Decode the response
         got_dj = gotresp.json()
-        name = got_dj['name']
-
+        name = ""
+        if got_dj['name']:
+            name = got_dj['name']
+        else:
+            name = got_dj['aliases'][0]
         print(f'Character: {name}')
         print('Book appearances: ')
         loopMe(got_dj, 'books')
