@@ -6,16 +6,14 @@ from flask import url_for
 from flask import request
 from flask import render_template
 
-#at least two endpoints
-#at least one of your endpoints should return JSON
-#has ONE additional feature from the following list:
-#	one endpoint returns HTML that uses jinja2 logic
-#	requires a session value be present in order to get a response
-#	writes to/reads from a cookie
-#	reads from/writes to a sqlite3 database
+# custom api of some general information for characters of the game Old School Runescape
+# First entry is my own character. Remaining entries are made up, and put in an array for post.
+# POST currently not implemented. 
 
 app = Flask(__name__)
 
+# api data for players and some general information. 
+# Includes name, gp wealth, quest points, pets, inventory, stats.
 data = [
         {
             'name': 'Crucible',
@@ -83,11 +81,13 @@ data = [
         ]
 
 
-
+# base route to display all data
 @app.route("/")
 def player():
     return data
 
+# endpoint for viewing pets of a player, player is a number for the index location of a player.
+# jinja2 logic for needing more than 1 pet to display the images for the pet. 
 @app.route("/view/<int:player>")
 def pets(player):
     return render_template("pets.html", petInfo = data[player]['pets'], playerStats = data[player]['stats'])
